@@ -20,16 +20,12 @@ html {
       font-size: 75%; } }
 
 body {
-  box-sizing: border-box;
-  padding: 3rem; }
-  @media only screen and (max-width: 56.25em) {
-    body {
-      padding: 0; } }
+  box-sizing: border-box; }
 
 .wrapper {
   background-color: #aaa7a7;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -63,7 +59,8 @@ body {
 .navbar {
   position: fixed;
   transition: all 0.25s ease-in-out;
-  background: #fff; }
+  background: #fff;
+  padding: 0.5rem 0; }
   .navbar__menu {
     list-style: none;
     max-height: 35rem;
@@ -118,7 +115,7 @@ body {
       color: #8000ff;
       font-size: 2.3rem; }
   .navbar#navbar-top .navbar__menu, .navbar#navbar-bottom .navbar__menu {
-    height: 20rem; }
+    max-height: 20rem; }
   .navbar#navbar-top {
     top: 0;
     bottom: auto;

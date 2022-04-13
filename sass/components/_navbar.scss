@@ -2,6 +2,7 @@
   position: fixed;
   transition: all 0.25s ease-in-out;
   background: #fff;
+  padding: 0.5rem 0;
 
   &__menu {
     list-style: none;
@@ -9,7 +10,6 @@
     min-width: max-content;
     width: max-content;
     overflow-y: auto;
-
     // custom scroll bar for the navbar menu
 
     &::-webkit-scrollbar {
@@ -83,7 +83,7 @@
   &#navbar-top,
   &#navbar-bottom {
     .navbar__menu {
-      height: 20rem;
+      max-height: 20rem;
     }
   }
 
