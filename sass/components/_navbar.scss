@@ -10,14 +10,14 @@
     width: max-content;
     overflow-y: auto;
     li {
-      padding: 0 2rem;
+      padding: 0.5rem 3rem;
       text-align: center;
       a {
         font-family: "Poppins", sans-serif;
-        color: $color-secondary;
-        font-weight: 700;
+        color: #011a41;
+        font-weight: 500;
         display: inline-block;
-        font-size: 1.2rem;
+        font-size: 2rem;
         padding: 0.5rem 2rem;
         text-decoration: none;
         text-transform: capitalize;
@@ -65,7 +65,7 @@
 
   &#navbar-top {
     @include navbar(0, auto, 50%, auto, -50%, -100%, 0);
-    padding-bottom: 2.5rem;
+
     //top,bottom,left,right,x-axis,y-axis,rotation-degree
 
     label {
@@ -76,7 +76,7 @@
 
   &#navbar-bottom {
     @include navbar(auto, 0, 50%, auto, -50%, 100%, 0);
-    padding-top: 2.5rem;
+
     label {
       @include navbar(-30px, auto, 50%, auto, -50%, 0, 180deg);
       //top,bottom,left,right,x-axis,y-axis,rotation-degree
@@ -84,7 +84,6 @@
   }
 
   &#navbar-right {
-    padding-left: 2.5rem;
     @include navbar(50%, auto, auto, 0, 100%, -50%, 0);
 
     label {
@@ -93,7 +92,6 @@
     }
   }
   &#navbar-left {
-    padding-right: 2.5rem;
     @include navbar(50%, auto, 0, auto, -100%, -50%, 0);
 
     label {
