@@ -1,0 +1,152 @@
+.navbar {
+  position: fixed;
+  transition: all 0.25s ease-in-out;
+  background: #fff;
+
+  &__menu {
+    list-style: none;
+    max-height: 50rem;
+    min-width: max-content;
+    width: max-content;
+    overflow-y: auto;
+    li {
+      padding: 0 2rem;
+      text-align: center;
+      a {
+        color: $color-secondary;
+        font-weight: 700;
+        display: inline-block;
+        font-size: 1.2rem;
+        padding: 0.5rem 2rem;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: 0.2s ease-out;
+      }
+      &:hover {
+        background: $color-primary;
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+  }
+
+  label {
+    transition: all 0.25s ease-in;
+
+    i {
+      animation: moveInLeft 3s infinite ease-in-out;
+      font-size: 2rem;
+      height: 1.5rem;
+      display: flex;
+      justify-content: center;
+      width: 1.5rem;
+      padding: 0.2rem;
+      &::before {
+        transition: transform 0.5s ease-in;
+      }
+    }
+
+    &:hover {
+      i {
+        color: $color-primary;
+        font-size: 2.3rem;
+      }
+    }
+  }
+
+  &#navbar-top {
+    @include navbar(0, auto, 50%, auto, -50%, -100%, 0);
+    padding-bottom: 2.5rem;
+    //top,bottom,left,right,x-axis,y-axis,rotation-degree
+
+    label {
+      @include navbar(auto, -30px, 50%, auto, -50%, 0, 0);
+      //top,bottom,left,right,x-axis,y-axis,rotation-degree
+    }
+  }
+
+  &#navbar-bottom {
+    @include navbar(auto, 0, 50%, auto, -50%, 100%, 0);
+    padding-top: 2.5rem;
+    label {
+      @include navbar(-30px, auto, 50%, auto, -50%, 0, 180deg);
+      //top,bottom,left,right,x-axis,y-axis,rotation-degree
+    }
+  }
+
+  &#navbar-right {
+    padding-left: 2.5rem;
+    @include navbar(50%, auto, auto, 0, 100%, -50%, 0);
+
+    label {
+      @include navbar(50%, auto, -30px, auto, 0%, -50%, 90deg);
+      //top,bottom,left,right,x-axis,y-axis,rotation-degree
+    }
+  }
+  &#navbar-left {
+    padding-right: 2.5rem;
+    @include navbar(50%, auto, 0, auto, -100%, -50%, 0);
+
+    label {
+      @include navbar(50%, auto, auto, -30px, 0%, -50%, -90deg);
+      //top,bottom,left,right,x-axis,y-axis,rotation-degree
+    }
+  }
+}
+
+#toggle-top:checked ~ #navbar-top,
+#toggle-bottom:checked ~ #navbar-bottom {
+  transform: translate(-50%, 0%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+#toggle-left:checked ~ #navbar-left,
+#toggle-right:checked ~ #navbar-right {
+  transform: translate(0%, -50%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+#toggle-top:checked ~ #navbar-top label i::before,
+#toggle-bottom:checked ~ #navbar-bottom label i::before,
+#toggle-left:checked ~ #navbar-left label i::before,
+#toggle-right:checked ~ #navbar-right label i::before {
+  transform: rotate(180deg);
+}
+
+#toggle-top:checked ~ #navbar-top label,
+#toggle-bottom:checked ~ #navbar-bottom label,
+#toggle-left:checked ~ #navbar-left label,
+#toggle-right:checked ~ #navbar-right label {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+#toggle-top:checked ~ #navbar-top label {
+  bottom: 0;
+  padding: 0.25rem 0;
+}
+#toggle-bottom:checked ~ #navbar-bottom label {
+  top: 0;
+  padding: 0.25rem 0;
+}
+
+#toggle-left:checked ~ #navbar-left label {
+  padding: 0 0.25rem;
+  right: 0;
+}
+#toggle-right:checked ~ #navbar-right label {
+  left: 0;
+}
+#toggle-bottom:checked ~ #navbar-bottom label i::before,
+#toggle-left:checked ~ #navbar-left label i::before,
+#toggle-right:checked ~ #navbar-right label i::before {
+  transform: rotate(180deg);
+}

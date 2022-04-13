@@ -1,0 +1,49 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin navbar($top, $bottom, $left, $right, $x, $y, $deg) {
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  transform: translate($x, $y) rotate($deg);
+}
+
+@mixin navbar-label {
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  transform: translate($x, $y) rotate($deg);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}

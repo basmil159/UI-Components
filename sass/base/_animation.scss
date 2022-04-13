@@ -1,0 +1,17 @@
+@keyframes moveInLeft {
+  0% {
+    transform: translateY(0.3rem);
+  }
+  25% {
+    transform: translateY(-0.3rem);
+  }
+  50% {
+    transform: translateY(0.3rem);
+  }
+  75% {
+    transform: translateY(-0.3rem);
+  }
+  100% {
+    transform: translateY(0.3rem);
+  }
+}

@@ -1,0 +1,57 @@
+/* normalize css */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: initial;
+}
+html {
+  font-size: 62.5%; //1rem =10 px; 10px/16px * 100% = 62.5%
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1 rem = 8 px;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 9px;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1 rem = 12px;
+  }
+}
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+.wrapper {
+  background-color: #222;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+
+  label {
+    padding: 1rem;
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 30% 30%;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
