@@ -13,6 +13,7 @@
       padding: 0 2rem;
       text-align: center;
       a {
+        font-family: "Poppins", sans-serif;
         color: $color-secondary;
         font-weight: 700;
         display: inline-block;
@@ -43,6 +44,7 @@
     i {
       animation: moveInLeft 3s infinite ease-in-out;
       font-size: 2rem;
+      font-weight: 700;
       height: 1.5rem;
       display: flex;
       justify-content: center;
