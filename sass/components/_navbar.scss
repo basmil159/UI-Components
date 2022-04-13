@@ -9,6 +9,24 @@
     min-width: max-content;
     width: max-content;
     overflow-y: auto;
+
+    // custom scroll bar for the navbar menu
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
     li {
       padding: 0.5rem 3rem;
       text-align: center;
@@ -17,7 +35,7 @@
         color: #011a41;
         font-weight: 500;
         display: inline-block;
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 0.5rem 2rem;
         text-decoration: none;
         text-transform: capitalize;
@@ -60,6 +78,12 @@
         color: $color-primary;
         font-size: 2.3rem;
       }
+    }
+  }
+  &#navbar-top,
+  &#navbar-bottom {
+    .navbar__menu {
+      height: 20rem;
     }
   }
 
