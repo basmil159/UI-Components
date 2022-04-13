@@ -153,22 +153,6 @@
   border-radius: 0;
 }
 
-// #toggle-top:checked ~ #navbar-top label {
-//   bottom: 0;
-//   padding: 0.25rem 0;
-// }
-// #toggle-bottom:checked ~ #navbar-bottom label {
-//   top: 0;
-//   padding: 0.25rem 0;
-// }
-
-// #toggle-left:checked ~ #navbar-left label {
-//   padding: 0 0.25rem;
-//   right: 0;
-// }
-// #toggle-right:checked ~ #navbar-right label {
-//   left: 0;
-// }
 #toggle-bottom:checked ~ #navbar-bottom label i::before,
 #toggle-left:checked ~ #navbar-left label i::before,
 #toggle-right:checked ~ #navbar-right label i::before {
